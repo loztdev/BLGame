@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vault Hunter Sim</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header id="topbar">
+  <div class="brand">VAULT HUNTER SIM</div>
+  <div id="hud" class="hud"></div>
+</header>
+
+<nav id="tabs">
+  <button class="tab-btn active" data-tab="encounter">Encounter</button>
+  <button class="tab-btn" data-tab="inventory">Inventory</button>
+  <button class="tab-btn" data-tab="hunters">Vault Hunters</button>
+  <button class="tab-btn" data-tab="prestige">Prestige</button>
+  <button class="tab-btn" data-tab="codex">Codex</button>
+</nav>
+
+<main id="app">
+
+  <section id="tab-encounter" class="tab-panel active">
+    <div class="panel" id="encounterPanel"></div>
+    <div class="panel" id="battleLogPanel">
+      <h3>Battle Log</h3>
+      <div id="battleLog" class="battle-log"></div>
+    </div>
+  </section>
+
+  <section id="tab-inventory" class="tab-panel">
+    <div class="panel">
+      <h3>Equipped</h3>
+      <div id="equippedGrid" class="equipped-grid"></div>
+    </div>
+    <div class="panel">
+      <h3>Inventory</h3>
+      <div class="inv-filter" id="invFilter"></div>
+      <div id="inventoryGrid" class="item-grid"></div>
+    </div>
+  </section>
+
+  <section id="tab-hunters" class="tab-panel">
+    <div class="panel">
+      <h3>Recruit Vault Hunters</h3>
+      <p class="hint">Cost reflects how broken each Vault Hunter's build is considered in the meta/lore. Recruit one, then make them active to use their action skill in combat.</p>
+      <div id="huntersGrid" class="item-grid"></div>
+    </div>
+  </section>
+
+  <section id="tab-prestige" class="tab-panel">
+    <div class="panel" id="prestigePanel"></div>
+  </section>
+
+  <section id="tab-codex" class="tab-panel">
+    <div class="panel">
+      <h3>Unique &amp; Legendary Codex</h3>
+      <p class="hint">Every unique item across every game, labeled by source. The Hellfire SMG is the one item with an explicit cross-game power ranking: BL2 &gt; BL3 &gt; BL4 &gt; TPS &gt; BL1.</p>
+      <div class="inv-filter" id="codexFilter"></div>
+      <div id="codexGrid" class="item-grid"></div>
+    </div>
+  </section>
+
+</main>
+
+<script src="js/data/core.js"></script>
+<script src="js/data/words.js"></script>
+<script src="js/data/enemies.js"></script>
+<script src="js/data/vaultHunters.js"></script>
+<script src="js/data/uniques.js"></script>
+<script src="js/generator.js"></script>
+<script src="js/combat.js"></script>
+<script src="js/state.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
