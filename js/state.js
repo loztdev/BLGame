@@ -78,12 +78,16 @@ function removeFromInventory(category, id) {
 }
 
 function equipItem(item) {
+  let displaced = null;
   if (item.category === 'gun') {
     if (!state.equipped.gun1) state.equipped.gun1 = item;
-    else state.equipped.gun2 = item;
+    else if (!state.equipped.gun2) state.equipped.gun2 = item;
+    else { displaced = state.equipped.gun2; state.equipped.gun2 = item; }
   } else {
+    displaced = state.equipped[item.category];
     state.equipped[item.category] = item;
   }
+  return displaced;
 }
 
 function unequipSlot(slot) {

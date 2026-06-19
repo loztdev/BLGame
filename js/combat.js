@@ -67,7 +67,7 @@ const MAX_BATTLE_SECONDS = 240;
 
 function simulateBattle(state, encounter) {
   const p = derivePlayerCombatStats(state);
-  let hp = encounter.maxHp;
+  let hp = encounter.hp;
   let health = p.maxHealth;
   let shield = p.shieldCapacity;
   let skillCooldown = 0;
