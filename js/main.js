@@ -86,7 +86,12 @@ document.getElementById('app').addEventListener('click', (e) => {
 
   if (action === 'equip') {
     const item = findItem(btn.dataset.cat, btn.dataset.id);
-    if (item) { equipItem(item); removeFromInventory(btn.dataset.cat, btn.dataset.id); saveState(); renderEquipped(); renderInventory(); renderHud(); }
+    if (item) {
+      removeFromInventory(btn.dataset.cat, btn.dataset.id);
+      const displaced = equipItem(item);
+      if (displaced) addToInventory(displaced);
+      saveState(); renderEquipped(); renderInventory(); renderHud();
+    }
   }
   if (action === 'unequip') {
     const slot = btn.dataset.slot;
